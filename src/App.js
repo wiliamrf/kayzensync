@@ -18,36 +18,35 @@ function PrivateRoute({ element }) {
 function App() {
   return (
     <AuthProvider>
-    <Router>
-      <div className="app-container">
-        <Routes>
-          <Route path="/login" element={<LoginPage />} />
-
-          <Route
-            path="/*"
-            element={
-              <PrivateRoute
-                element={
-                  <>
-                    <MenuLateral />
-                    <main className="conteudo">
-                      <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/agenda" element={<Agenda />} />
-                        <Route path="/pacientes" element={<Pacientes />} />
-                        <Route path="/pagamentos" element={<Pagamentos />} />
-                      </Routes>
-                    </main>
-                  </>
-                }
-              />
-            }
-          />
-        </Routes>
-      </div>
-    </Router>
-  </AuthProvider>
-);
+      <Router>
+        <div className="app-container">
+          <Routes>
+            <Route path="/login" element={<LoginPage />} />
+            <Route
+              path="/*"
+              element={
+                <PrivateRoute
+                  element={
+                    <>
+                      <MenuLateral />
+                      <main className="conteudo">
+                        <Routes>
+                          <Route path="/" element={<Home />} />
+                          <Route path="/agenda" element={<Agenda />} />
+                          <Route path="/pacientes" element={<Pacientes />} />
+                          <Route path="/pagamentos" element={<Pagamentos />} />
+                        </Routes>
+                      </main>
+                    </>
+                  }
+                />
+              }
+            />
+          </Routes>
+        </div>
+      </Router>
+    </AuthProvider>
+  );
 }
 
 export default App;
