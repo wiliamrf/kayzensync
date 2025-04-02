@@ -9,6 +9,7 @@ import Pagamentos from "./pages/Pagamentos";
 import LoginPage from "./pages/LoginPage"; 
 import { AuthProvider, AuthContext } from "./context/AutoContext";
 import "./App.css";
+import Login from "./pages/Login";
 
 function PrivateRoute({ element }) {
   const { user } = useContext(AuthContext);
@@ -21,7 +22,7 @@ function App() {
       <Router>
         <div className="app-container">
           <Routes>
-            <Route path="/login" element={<LoginPage />} />
+            <Route path="/login" element={<Login />} />
             <Route
               path="/*"
               element={
